@@ -38,7 +38,7 @@ ytdl_format_options = {
     'quiet': True,
     'no_warnings': True,
     'default_search': 'auto',
-    'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
+    'source_address': '0.0.0.0'
 }
 
 ffmpeg_options = {
@@ -136,7 +136,7 @@ def nextSong():
         voice = discord.utils.get(bot.voice_clients)
         del music_queue[0]
         print(music_queue)
-        voice.play(discord.FFmpegPCMAudio(executable="D:\\program\\wawa\\wawabot\\wawabot\\ffmpeg-6.1-full_build\\bin\\ffmpeg.exe", source=f"{music_queue[0][0]}"),after = lambda x: nextSong())
+        voice.play(discord.FFmpegPCMAudio(executable='./ffmpeg-6.1-full_build/bin/ffmpeg.exe', source=f"{music_queue[0][0]}"),after = lambda x: nextSong())
 
 def endsong():
     voice = discord.utils.get(bot.voice_clients)
@@ -162,7 +162,7 @@ async def play(ctx,url):
         await YTDLSource.from_url(url)
         print(music_queue)
 
-        voice_channel.play(discord.FFmpegPCMAudio(executable="D:\\program\\wawa\\wawabot\\wawabot\\ffmpeg-6.1-full_build\\bin\\ffmpeg.exe", source=f"{music_queue[0][0]}"),after = lambda x: nextSong())
+        voice_channel.play(discord.FFmpegPCMAudio(executable='./ffmpeg-6.1-full_build/bin/ffmpeg.exe', source=f"{music_queue[0][0]}"),after = lambda x: nextSong())
         
         await ctx.send(f'**正在播放：{music_queue[0][1]}**')
 
