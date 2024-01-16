@@ -225,4 +225,4 @@ async def shutdown(ctx):
     await bot.close()
 
 if __name__ == "__main__" :
-    bot.run("MTE3MzQ5MTY0OTQxNDk3MTM5Mg.Gil8lX.MzbwmztzjVsu2u4LCyeNPskhojP-qcuJZetvUs")
+    bot.run("your bot token")
